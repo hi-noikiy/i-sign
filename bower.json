@@ -1,0 +1,20 @@
+{
+  "name": "isign",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ocliuziyang <ocliuziyang@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gentelella": "^1.4.0"
+  }
+}
