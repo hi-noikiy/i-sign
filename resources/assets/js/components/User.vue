@@ -52,6 +52,7 @@
 
 <script>
     import axios from 'axios'
+    import {show_stack_bottomright} from '../app.notify'
     export default {
         data() {
             return {
@@ -68,14 +69,13 @@
                     $(document).ready(function(){
                         $('#datatable').DataTable();
                     });
-
+                    show_stack_bottomright('success', '获取用户列表成功!')
+                    NProgress.done();
                 }).catch(function (error) {
-
+                    NProgress.done();
                     console.log(error)
+                    show_stack_bottomright('error', error.toString())
                 });
-
-                NProgress.done();
-//                show_stack_success('info');
 
             },
             editUser(user) {

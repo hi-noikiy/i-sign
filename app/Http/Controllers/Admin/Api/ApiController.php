@@ -38,6 +38,11 @@ class ApiController extends Controller
      */
     const CODE_ERROR = 'ERROR';
 
+    public function __construct()
+    {
+        $this->middleware('auth.admin');
+    }
+    
     /**
      * @return mixed
      */

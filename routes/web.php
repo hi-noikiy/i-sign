@@ -35,6 +35,12 @@ Route::group(['prefix' => 'admin/api', 'namespace' => 'Admin\Api'], function () 
     Route::post('user', 'UserController@store')->name('api.admin.user.store');
     Route::put('user', 'UserController@update')->name('api.admin.user.update');
 
+    Route::get('buses', 'BusController@index');
+    Route::post('bus', 'BusController@store');
+    Route::put('bus', 'BusController@update');
+
+    Route::get('busSignUsers', 'BusController@showBusSignUsers');
+    Route::post('userSignByBus', 'BusController@userSignByBus');
 
     Route::get('me', 'UserController@fetchMe')->name('api.admin.me');
 

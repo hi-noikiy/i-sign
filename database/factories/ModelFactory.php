@@ -25,5 +25,16 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Models\Bus::class, function (Faker\Generator $faker) {
+
+    static $i = 1;
+    return [
+        'name' => $i++.'号车',
+        'description' => '',
+        'seat_count' => '40'
+    ];
+
+});
+
 
 

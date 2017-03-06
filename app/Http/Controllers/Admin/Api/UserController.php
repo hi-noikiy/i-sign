@@ -6,6 +6,7 @@ use App\Services\UserService;
 use App\Transformers\UserTransformer;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class UserController extends ApiController
 {
@@ -16,6 +17,7 @@ class UserController extends ApiController
 
     /**
      * UserController constructor.
+     * @param UserService $userService
      */
     public function __construct(UserService $userService)
     {
@@ -54,12 +56,13 @@ class UserController extends ApiController
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
-            'name' => 'required',
-            'mobile' => 'required',
-            'sex' => 'required',
-            'compony' => 'required',
-            'position' => 'required'
+            'user.name' => 'required',
+            'user.mobile' => 'required',
+            'user.sex' => 'required',
+            'user.company' => 'required',
+            'user.position' => 'required'
         ]);
         $user = $this->userService->storeUser();
         return $this->responseJsonWithData($user, new UserTransformer());
