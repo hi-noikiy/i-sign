@@ -74,7 +74,7 @@
 
 <script>
 
-    import {show_stack_bottomright} from '../app.notify'
+    import {show_stack_bottomright, show_stack_errors} from '../app.notify'
 
     export default {
         props: {
@@ -136,11 +136,9 @@
                     }
                 }).catch(function(error) {
 
+                    console.log(error.response);
                     if(error.response) {
-                        _.forEach(error.response.data, function (n) {
-                            show_stack_bottomright('error', n, 4000)
-                        });
-//                        show_stack_bottomright('error', '服务器错误:'+ error.response.data.name)
+                        show_stack_errors(error.response)
                     } else {
                         show_stack_bottomright('error', '服务器开小差了!');
                     }

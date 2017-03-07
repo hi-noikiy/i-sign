@@ -24,5 +24,18 @@ function show_stack_bottomright(type, msg='操作提示', delay_time=2000) {
     }
     new PNotify(opts);
 }
+
+function show_stack_errors(errors) {
+
+    if(errors) {
+        _.forEach(errors.data, function (n) {
+            show_stack_bottomright('error', n, 4000)
+        });
+    } else {
+        show_stack_bottomright('error', '服务器开小差了!');
+    }
+}
+
+
 PNotify.prototype.options.styling = "fontawesome";
-export {show_stack_bottomright};
+export {show_stack_bottomright, show_stack_errors};

@@ -20,7 +20,7 @@
                             <th>核载</th>
 
                             <th>路程状态</th>
-                            <th>启用</th>
+                            <th>状态</th>
                             <th>发时</th>
                             <th>到时</th>
                             <th>操作</th>
@@ -35,8 +35,15 @@
                             <td>{{ bus.description }}</td>
                             <td>{{ bus.seat_count }}</td>
 
-                            <td>{{ bus.state }}</td>
-                            <td>{{ bus.is_active }}</td>
+                            <td v-if="bus.state == 0"><button class="btn btn-warning btn-sm">&nbsp;未发车&nbsp;&nbsp;</button></td>
+                            <td v-else-if="bus.state == 1"><button class="btn btn-primary btn-sm">到达机场</button></td>
+                            <td v-else-if="bus.state == 2"><button class="btn btn-default btn-sm">前往酒店</button></td>
+                            <td v-else-if="bus.state == 3"><button class="btn btn-success btn-sm">到达酒店</button></td>
+                            <td v-else><button class="btn btn-danger btn-sm">未知状态</button></td>
+
+                            <td v-if="bus.is_active"><button class="btn btn-success btn-sm" @click="changeBusActive(bus.id)">已启用</button></td>
+                            <td v-else><button class="btn btn-warning btn-sm" @click="changeBusActive(bus.id)">已停用</button></td>
+
                             <td>{{ bus.sended_at }}</td>
                             <td>{{ bus.arrived_at }}</td>
                             <td style="width: 100px">
@@ -63,11 +70,12 @@
         },
         methods: {
 
-            fetchUsers() {
+            fetchBuses() {
                 NProgress.start()
                 let self = this
                 axios.get('admin/api/buses').then(function(response) {
                     self.buses = response.data.data
+                    console.log(self.buses)
                     show_stack_bottomright('success', '获取班车列表成功!')
                     NProgress.done()
                     $(document).ready(function(){
@@ -77,10 +85,18 @@
                     show_stack_bottomright(' error', '获取班车列表失败!')
                     NProgress.done()
                 })
+            },
+            changeBusActive(bus_id) {
+                swal({
+                    title: "Error!",
+                    text: "Here's my error message!",
+                    type: "info",
+                    confirmButtonText: "Cool"
+                });
             }
         },
         created() {
-            this.fetchUsers()
+            this.fetchBuses()
         },
 
     }

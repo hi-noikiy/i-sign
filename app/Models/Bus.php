@@ -36,7 +36,7 @@ class Bus extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\Models\User', 'bus_user', 'bus_id', 'id');
+        return $this->belongsToMany('App\Models\User', 'bus_user', 'bus_id', 'user_id');
     }
 
 }

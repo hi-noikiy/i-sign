@@ -111,7 +111,7 @@
                 NProgress.start()
                 let self = this
                 self.currentClickBusId = id
-                axios.get('admin/api/busSignUsers', {
+                axios.get('admin/api/bus/sign/users', {
                     params: {
                         id: id
                     }
@@ -128,15 +128,27 @@
 
             beginSign() {
 
-                axios.post('admin/api/userSignByBus', {
+                NProgress.start()
+                let self = this
+
+                axios.post('admin/api/user/sign/bus', {
                     params: {
                         mobile: this.userSignMobile,
                         busId: self.currentClickBusId
                     }
                 }).then(function (response) {
                     console.log(response)
+
+                    if (response.data.error) {
+                        show_stack_bottomright('error', response.data.error.message);
+                    } else {
+                        show_stack_bottomright('success', '签到成功!')
+                    }
+
+                    NProgress.done()
                 }).catch(function (error) {
-                    
+                    console.log(error)
+                    NProgress.done()
                 })
             }
         },

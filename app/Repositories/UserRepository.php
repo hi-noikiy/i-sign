@@ -29,6 +29,16 @@ class UserRepository {
         return User::find($id);
     }
 
+
+    /**
+     * @param $mobile
+     * @return \Illuminate\Database\Eloquent\Model|null|static
+     */
+    public function fetchUserByMobile($mobile)
+    {
+        return User::where('mobile', $mobile)->first();
+    }
+
     public function store(array $data=[])
     {
         $data = array_merge($data, ['password' => \Hash::make($data['mobile'])]);

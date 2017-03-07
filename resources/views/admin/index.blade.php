@@ -32,6 +32,8 @@
     <!-- Pnotify -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.0.0/pnotify.css">
     <link rel="stylesheet" href="/css/pnotify.buttons.css">
+    <!-- sweetalert -->
+    <link rel="stylesheet" type="text/css" href="/bower_dl/sweetalert/dist/sweetalert.css">
 </head>
 
 <body class="nav-md">
@@ -83,6 +85,8 @@
     <script src="bower_dl/gentelella/vendors/moment/min/moment.min.js"></script>
     <script src="bower_dl/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
+    <!-- sweetalert -->
+    <script src="/bower_dl/sweetalert/dist/sweetalert.min.js"></script>
     <!--  vue.js components compiled file -->
     <script src="{{ asset('js/app.js') }}"></script>
 
