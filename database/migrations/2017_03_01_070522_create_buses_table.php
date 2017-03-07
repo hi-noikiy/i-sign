@@ -13,7 +13,7 @@ class CreateScheduledBusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('scheduled_buses', function (Blueprint $table) {
+        Schema::create('buses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
@@ -33,6 +33,6 @@ class CreateScheduledBusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scheduled_buses');
+        Schema::dropIfExists('buses');
     }
 }

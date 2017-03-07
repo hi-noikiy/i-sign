@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Bus extends Model
 {
-    protected $table = 'scheduled_buses';
+    protected $table = 'buses';
 
 
     public function users()
