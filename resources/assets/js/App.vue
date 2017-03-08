@@ -86,9 +86,8 @@
         },
         mounted() {
             //挂载元素之后加载 js
-            require('./custom')
-            require('./jquery.dataTables')
 
+            require('./jquery.dataTables')
         },
         created () {
             //请求用户数据

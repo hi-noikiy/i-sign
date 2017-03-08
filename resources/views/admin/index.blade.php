@@ -17,7 +17,6 @@
     <link href="bower_dl/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="bower_dl/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- bootstrap-progressbar -->
     <link href="bower_dl/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -28,7 +27,8 @@
     <link href="bower_dl/gentelella/build/css/custom.min.css" rel="stylesheet">
     <!-- DataTables Style-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
-
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/bower_dl/gentelella/vendors/select2/dist/css/select2.min.css">
     <!-- Pnotify -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.0.0/pnotify.css">
     <link rel="stylesheet" href="/css/pnotify.buttons.css">
@@ -39,7 +39,6 @@
 <body class="nav-md">
 
     <div id="app"></div>
-
 
 
     <!-- jQuery -->
@@ -84,13 +83,15 @@
     <!-- bootstrap-daterangepicker -->
     <script src="bower_dl/gentelella/vendors/moment/min/moment.min.js"></script>
     <script src="bower_dl/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+    <!--  select2 -->
+    <script src="/bower_dl/gentelella/vendors/select2/dist/js/select2.min.js"></script>
     <!-- sweetalert -->
     <script src="/bower_dl/sweetalert/dist/sweetalert.min.js"></script>
     <!--  vue.js components compiled file -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-
+    <script src="/js/custom.js"></script>
+    <script src="/js/icheck.custom.js"></script>
 
 
 </body>

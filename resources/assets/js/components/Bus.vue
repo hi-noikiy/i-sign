@@ -4,7 +4,7 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2>班车列表 <small>buses</small></h2>
-                    <router-link to="/bus/create"><button class="btn btn-success pull-right" >新增班车</button></router-link>
+                    <router-link to="/bus/edit"><button class="btn btn-success pull-right" >新增班车</button></router-link>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">

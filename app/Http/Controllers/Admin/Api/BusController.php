@@ -65,7 +65,6 @@ class BusController extends ApiController
         $params = $request->get('params');
         $res = $this->busUserService->userSignByBus();
         if ($res === -1) {
-            Log::alert($res);
             return $this->responseWithError('用户不存在');
         } else if($res === 0) {
 

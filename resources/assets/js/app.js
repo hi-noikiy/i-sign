@@ -14,6 +14,7 @@ import UserEdit from './components/UserEdit.vue'
 import Bus from './components/Bus.vue'
 import BusEdit from './components/BusEdit.vue'
 import BusUser from './components/BusUsers.vue'
+
 const routes = [
     {path: '/', component: Home},
     {path: '/users', component: User},
@@ -22,6 +23,7 @@ const routes = [
     {path: '/user/:id', name: 'user', component: UserEdit, props: true},
 
     {path: '/buses', name: 'buses', component: Bus},
+    {path: '/bus/edit', name: 'bus.edit', component: BusEdit, props: true},
     {path: '/buses/user', name: 'buses.user', component: BusUser},
 
 ];

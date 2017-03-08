@@ -11,6 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.scripts(['resources/assets/js/icheck.custom.js'], 'public/js/icheck.custom.js');
 mix.js('resources/assets/js/app.js', 'public/js');
    // .sass('resources/assets/sass/app.scss', 'public/css');
 
