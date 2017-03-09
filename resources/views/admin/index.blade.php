@@ -87,11 +87,12 @@
     <script src="/bower_dl/gentelella/vendors/select2/dist/js/select2.min.js"></script>
     <!-- sweetalert -->
     <script src="/bower_dl/sweetalert/dist/sweetalert.min.js"></script>
+
     <!--  vue.js components compiled file -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
-    <script src="/js/custom.js"></script>
-    <script src="/js/icheck.custom.js"></script>
+
 
 
 </body>

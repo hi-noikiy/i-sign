@@ -34,23 +34,11 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">禁用</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div id="gender" class="" data-toggle="buttons">
-                                    <label>
-                                        <input type="radio" @click="bus.is_active = true" :class="{checked: bus.is_active}"> &nbsp; 是 &nbsp;
-                                    </label>
-                                    <label >
-                                        <input type="radio" @click="bus.is_active = false" :class="{checked: !bus.is_active}"> &nbsp; 否 &nbsp;
-                                    </label>
-                                </div>
 
-                                <!--<div id="gender" class="" data-toggle="buttons">-->
-                                    <!--<label>-->
-                                        <!--<input type="radio" value="true" v-model="bus.is_active"> &nbsp; 是 &nbsp;-->
-                                    <!--</label>-->
-                                    <!--<label>-->
-                                        <!--<input type="radio" value="false" v-model="bus.is_active"> &nbsp; 否 &nbsp;-->
-                                    <!--</label>-->
-                                <!--</div>-->
+                                <input type="radio" name="iCheck" value="true" v-model="bus."> 是
+
+                                <input type="radio" name="iCheck" @click="bus.is_active=false" checked> 否
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -84,14 +72,27 @@
 <script>
 
 
+
     export default {
         data() {
             return {
-                bus: {}
+                bus: {
+                    is_active: false
+                }
+            }
+        },
+        methods: {
+            test() {
+                 alert(1)
             }
         },
         mounted() {
-
+            require('../icheck')
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green',
+                increaseArea: '20%' // optional
+            });
         }
     }
 </script>
