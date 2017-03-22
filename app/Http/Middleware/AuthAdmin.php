@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Route;
 
 class AuthAdmin
 {
@@ -17,8 +18,6 @@ class AuthAdmin
     public function handle($request, Closure $next)
     {
         $user = $request->user();
-
-
         if ($user && $user->role_level == 9) {
 
             return $next($request);
@@ -33,6 +32,5 @@ class AuthAdmin
         }
 
         return redirect('admin/login')->withErrors('该用户，没有权限访问后台');
-
     }
 }
